@@ -1,3 +1,15 @@
+# MARTINS EDIT:
+
+Prove add-spec by installing the latest version of evm-semantics (good luck...) and then refer
+to that instance of `/kevm`:
+
+```
+/PATH-TO/evm-semantics/kevm prove dappsys/add-spec.k
+```
+
+
+
+
 # Formally Verified Smart Contracts
 
 This repository contains smart contracts that have been formally verified by
