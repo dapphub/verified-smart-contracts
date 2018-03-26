@@ -1,0 +1,332 @@
+<generatedTop>
+  <k>
+    #revert
+  </k>
+  <exit-code>
+    1
+  </exit-code>
+  <mode>
+    NORMAL
+  </mode>
+  <schedule>
+    BYZANTIUM
+  </schedule>
+  <analysis>
+    .Map
+  </analysis>
+  <ethereum>
+    <evm>
+      <output>
+        .WordStack
+      </output>
+      <memoryUsed>
+        3
+      </memoryUsed>
+      <callDepth>
+        V0
+      </callDepth>
+      <callStack>
+        V1
+      </callStack>
+      <interimStates>
+        V2
+      </interimStates>
+      <substateStack>
+        V3
+      </substateStack>
+      <callLog>
+        .Set
+      </callLog>
+      <touchedAccounts>
+        V4
+      </touchedAccounts>
+      <txExecState>
+        <program>
+          0 |-> PUSH ( 1 , 96 )
+          2 |-> PUSH ( 1 , 64 )
+          4 |-> MSTORE
+          5 |-> PUSH ( 1 , 4 )
+          7 |-> CALLDATASIZE
+          8 |-> LT
+          9 |-> PUSH ( 1 , 63 )
+          11 |-> JUMPI
+          12 |-> PUSH ( 1 , 0 )
+          14 |-> CALLDATALOAD
+          15 |-> PUSH ( 29 , 26959946667150639794667015087019630673637144422540572481103610249216 )
+          45 |-> SWAP ( 1 )
+          46 |-> DIV
+          47 |-> PUSH ( 4 , 4294967295 )
+          52 |-> AND
+          53 |-> DUP ( 1 )
+          54 |-> PUSH ( 4 , 134683653 )
+          59 |-> EQ
+          60 |-> PUSH ( 1 , 68 )
+          62 |-> JUMPI
+          63 |-> JUMPDEST
+          64 |-> PUSH ( 1 , 0 )
+          66 |-> DUP ( 1 )
+          67 |-> REVERT
+          68 |-> JUMPDEST
+          69 |-> CALLVALUE
+          70 |-> ISZERO
+          71 |-> PUSH ( 1 , 78 )
+          73 |-> JUMPI
+          74 |-> PUSH ( 1 , 0 )
+          76 |-> DUP ( 1 )
+          77 |-> REVERT
+          78 |-> JUMPDEST
+          79 |-> PUSH ( 1 , 107 )
+          81 |-> PUSH ( 1 , 4 )
+          83 |-> DUP ( 1 )
+          84 |-> DUP ( 1 )
+          85 |-> CALLDATALOAD
+          86 |-> SWAP ( 1 )
+          87 |-> PUSH ( 1 , 32 )
+          89 |-> ADD
+          90 |-> SWAP ( 1 )
+          91 |-> SWAP ( 2 )
+          92 |-> SWAP ( 1 )
+          93 |-> DUP ( 1 )
+          94 |-> CALLDATALOAD
+          95 |-> SWAP ( 1 )
+          96 |-> PUSH ( 1 , 32 )
+          98 |-> ADD
+          99 |-> SWAP ( 1 )
+          100 |-> SWAP ( 2 )
+          101 |-> SWAP ( 1 )
+          102 |-> POP
+          103 |-> POP
+          104 |-> PUSH ( 1 , 129 )
+          106 |-> JUMP
+          107 |-> JUMPDEST
+          108 |-> PUSH ( 1 , 64 )
+          110 |-> MLOAD
+          111 |-> DUP ( 1 )
+          112 |-> DUP ( 3 )
+          113 |-> DUP ( 2 )
+          114 |-> MSTORE
+          115 |-> PUSH ( 1 , 32 )
+          117 |-> ADD
+          118 |-> SWAP ( 2 )
+          119 |-> POP
+          120 |-> POP
+          121 |-> PUSH ( 1 , 64 )
+          123 |-> MLOAD
+          124 |-> DUP ( 1 )
+          125 |-> SWAP ( 2 )
+          126 |-> SUB
+          127 |-> SWAP ( 1 )
+          128 |-> RETURN
+          129 |-> JUMPDEST
+          130 |-> PUSH ( 1 , 0 )
+          132 |-> PUSH ( 1 , 139 )
+          134 |-> DUP ( 4 )
+          135 |-> DUP ( 4 )
+          136 |-> PUSH ( 1 , 147 )
+          138 |-> JUMP
+          139 |-> JUMPDEST
+          140 |-> SWAP ( 1 )
+          141 |-> POP
+          142 |-> SWAP ( 3 )
+          143 |-> SWAP ( 2 )
+          144 |-> POP
+          145 |-> POP
+          146 |-> JUMP
+          147 |-> JUMPDEST
+          148 |-> PUSH ( 1 , 0 )
+          150 |-> DUP ( 3 )
+          151 |-> DUP ( 3 )
+          152 |-> DUP ( 5 )
+          153 |-> ADD
+          154 |-> SWAP ( 2 )
+          155 |-> POP
+          156 |-> DUP ( 2 )
+          157 |-> LT
+          158 |-> ISZERO
+          159 |-> ISZERO
+          160 |-> ISZERO
+          161 |-> PUSH ( 1 , 168 )
+          163 |-> JUMPI
+          164 |-> PUSH ( 1 , 0 )
+          166 |-> DUP ( 1 )
+          167 |-> REVERT
+          168 |-> JUMPDEST
+          169 |-> SWAP ( 3 )
+          170 |-> SWAP ( 2 )
+          171 |-> POP
+          172 |-> POP
+          173 |-> JUMP
+          174 |-> STOP
+          175 |-> LOG ( 1 )
+          176 |-> PUSH ( 6 , 108278179835992 )
+          183 |-> SHA3
+          184 |-> INVALID
+          185 |-> BLOCKHASH
+          186 |-> PUSH ( 8 , 5318422450370444177 )
+          195 |-> JUMPI
+          196 |-> INVALID
+          197 |-> INVALID
+          198 |-> EQ
+          199 |-> DIV
+          200 |-> POP
+          201 |-> SHA3
+          202 |-> INVALID
+          203 |-> INVALID
+          204 |-> DIFFICULTY
+          205 |-> INVALID
+          206 |-> PUSH ( 14 , 2996499630678224272812794993180672 )
+        </program>
+        <programBytes>
+          96 : 96 : 96 : 64 : 82 : 96 : 4 : 54 : 16 : 96 : 63 : 87 : 96 : 0 : 53 : 124 : 1 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 0 : 144 : 4 : 99 : 255 : 255 : 255 : 255 : 22 : 128 : 99 : 8 : 7 : 28 : 5 : 20 : 96 : 68 : 87 : 91 : 96 : 0 : 128 : 253 : 91 : 52 : 21 : 96 : 78 : 87 : 96 : 0 : 128 : 253 : 91 : 96 : 107 : 96 : 4 : 128 : 128 : 53 : 144 : 96 : 32 : 1 : 144 : 145 : 144 : 128 : 53 : 144 : 96 : 32 : 1 : 144 : 145 : 144 : 80 : 80 : 96 : 129 : 86 : 91 : 96 : 64 : 81 : 128 : 130 : 129 : 82 : 96 : 32 : 1 : 145 : 80 : 80 : 96 : 64 : 81 : 128 : 145 : 3 : 144 : 243 : 91 : 96 : 0 : 96 : 139 : 131 : 131 : 96 : 147 : 86 : 91 : 144 : 80 : 146 : 145 : 80 : 80 : 86 : 91 : 96 : 0 : 130 : 130 : 132 : 1 : 145 : 80 : 129 : 16 : 21 : 21 : 21 : 96 : 168 : 87 : 96 : 0 : 128 : 253 : 91 : 146 : 145 : 80 : 80 : 86 : 0 : 161 : 101 : 98 : 122 : 122 : 114 : 48 : 88 : 32 : 183 : 64 : 103 : 73 : 206 : 213 : 10 : 87 : 202 : 251 : 145 : 87 : 12 : 15 : 20 : 4 : 80 : 32 : 225 : 225 : 68 : 232 : 109 : 147 : 189 : 36 : 128 : 4 : 243 : 31 : 81 : 242 : 0 : 41 : .WordStack
+        </programBytes>
+        <id>
+          V5
+        </id>
+        <caller>
+          V6
+        </caller>
+        <callData>
+          8 : 7 : 28 : 5 : nthbyteof ( V7 , 0 , 32 ) : nthbyteof ( V7 , 1 , 32 ) : nthbyteof ( V7 , 2 , 32 ) : nthbyteof ( V7 , 3 , 32 ) : nthbyteof ( V7 , 4 , 32 ) : nthbyteof ( V7 , 5 , 32 ) : nthbyteof ( V7 , 6 , 32 ) : nthbyteof ( V7 , 7 , 32 ) : nthbyteof ( V7 , 8 , 32 ) : nthbyteof ( V7 , 9 , 32 ) : nthbyteof ( V7 , 10 , 32 ) : nthbyteof ( V7 , 11 , 32 ) : nthbyteof ( V7 , 12 , 32 ) : nthbyteof ( V7 , 13 , 32 ) : nthbyteof ( V7 , 14 , 32 ) : nthbyteof ( V7 , 15 , 32 ) : nthbyteof ( V7 , 16 , 32 ) : nthbyteof ( V7 , 17 , 32 ) : nthbyteof ( V7 , 18 , 32 ) : nthbyteof ( V7 , 19 , 32 ) : nthbyteof ( V7 , 20 , 32 ) : nthbyteof ( V7 , 21 , 32 ) : nthbyteof ( V7 , 22 , 32 ) : nthbyteof ( V7 , 23 , 32 ) : nthbyteof ( V7 , 24 , 32 ) : nthbyteof ( V7 , 25 , 32 ) : nthbyteof ( V7 , 26 , 32 ) : nthbyteof ( V7 , 27 , 32 ) : nthbyteof ( V7 , 28 , 32 ) : nthbyteof ( V7 , 29 , 32 ) : nthbyteof ( V7 , 30 , 32 ) : nthbyteof ( V7 , 31 , 32 ) : nthbyteof ( V8 , 0 , 32 ) : nthbyteof ( V8 , 1 , 32 ) : nthbyteof ( V8 , 2 , 32 ) : nthbyteof ( V8 , 3 , 32 ) : nthbyteof ( V8 , 4 , 32 ) : nthbyteof ( V8 , 5 , 32 ) : nthbyteof ( V8 , 6 , 32 ) : nthbyteof ( V8 , 7 , 32 ) : nthbyteof ( V8 , 8 , 32 ) : nthbyteof ( V8 , 9 , 32 ) : nthbyteof ( V8 , 10 , 32 ) : nthbyteof ( V8 , 11 , 32 ) : nthbyteof ( V8 , 12 , 32 ) : nthbyteof ( V8 , 13 , 32 ) : nthbyteof ( V8 , 14 , 32 ) : nthbyteof ( V8 , 15 , 32 ) : nthbyteof ( V8 , 16 , 32 ) : nthbyteof ( V8 , 17 , 32 ) : nthbyteof ( V8 , 18 , 32 ) : nthbyteof ( V8 , 19 , 32 ) : nthbyteof ( V8 , 20 , 32 ) : nthbyteof ( V8 , 21 , 32 ) : nthbyteof ( V8 , 22 , 32 ) : nthbyteof ( V8 , 23 , 32 ) : nthbyteof ( V8 , 24 , 32 ) : nthbyteof ( V8 , 25 , 32 ) : nthbyteof ( V8 , 26 , 32 ) : nthbyteof ( V8 , 27 , 32 ) : nthbyteof ( V8 , 28 , 32 ) : nthbyteof ( V8 , 29 , 32 ) : nthbyteof ( V8 , 30 , 32 ) : nthbyteof ( V8 , 31 , 32 ) : .WordStack
+        </callData>
+        <callValue>
+          0
+        </callValue>
+        <wordStack>
+          chop ( V7 +Int V8 ) : V8 : V7 : 139 : 0 : V8 : V7 : 107 : 134683653 : .WordStack
+        </wordStack>
+        <localMem>
+          64 |-> 0
+          65 |-> 0
+          66 |-> 0
+          67 |-> 0
+          68 |-> 0
+          69 |-> 0
+          70 |-> 0
+          71 |-> 0
+          72 |-> 0
+          73 |-> 0
+          74 |-> 0
+          75 |-> 0
+          76 |-> 0
+          77 |-> 0
+          78 |-> 0
+          79 |-> 0
+          80 |-> 0
+          81 |-> 0
+          82 |-> 0
+          83 |-> 0
+          84 |-> 0
+          85 |-> 0
+          86 |-> 0
+          87 |-> 0
+          88 |-> 0
+          89 |-> 0
+          90 |-> 0
+          91 |-> 0
+          92 |-> 0
+          93 |-> 0
+          94 |-> 0
+          95 |-> 96
+        </localMem>
+        <pc>
+          167
+        </pc>
+        <gas>
+          99745
+        </gas>
+        <previousGas>
+          99745
+        </previousGas>
+        <static>
+          true
+        </static>
+      </txExecState>
+      <substate>
+        <selfDestruct>
+          V9
+        </selfDestruct>
+        <log>
+          V10
+        </log>
+        <refund>
+          V11
+        </refund>
+      </substate>
+      <gasPrice>
+        V12
+      </gasPrice>
+      <origin>
+        V13
+      </origin>
+      <previousHash>
+        V14
+      </previousHash>
+      <ommersHash>
+        V15
+      </ommersHash>
+      <coinbase>
+        V16
+      </coinbase>
+      <stateRoot>
+        V17
+      </stateRoot>
+      <transactionsRoot>
+        V18
+      </transactionsRoot>
+      <receiptsRoot>
+        V19
+      </receiptsRoot>
+      <logsBloom>
+        V20
+      </logsBloom>
+      <difficulty>
+        V21
+      </difficulty>
+      <number>
+        V22
+      </number>
+      <gasLimit>
+        V23
+      </gasLimit>
+      <gasUsed>
+        V24
+      </gasUsed>
+      <timestamp>
+        V25
+      </timestamp>
+      <extraData>
+        V26
+      </extraData>
+      <mixHash>
+        V27
+      </mixHash>
+      <blockNonce>
+        V28
+      </blockNonce>
+      <ommerBlockHeaders>
+        V29
+      </ommerBlockHeaders>
+      <blockhash>
+        V30
+      </blockhash>
+    </evm>
+    <network>
+      <activeAccounts>
+        SetItem ( V5 )
+        V31
+      </activeAccounts>
+      <accounts>
+        V32
+      </accounts>
+      <txOrder>
+        V33
+      </txOrder>
+      <txPending>
+        V34
+      </txPending>
+      <messages>
+        V35
+      </messages>
+    </network>
+  </ethereum>
+</generatedTop>
