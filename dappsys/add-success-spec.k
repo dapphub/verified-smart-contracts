@@ -1,7 +1,7 @@
 requires "abstract-semantics.k"
 requires "verification.k"
 
-module ADD-SPEC
+module ADD-SUCCESS-SPEC
   imports ETHEREUM-SIMULATION
   imports ABSTRACT-SEMANTICS
   imports VERIFICATION
@@ -35,7 +35,8 @@ module ADD-SPEC
           <callData> #abiCallData("addit", #uint256(X), #uint256(Y)) </callData>
 
           <callValue> 0 </callValue>
-          <wordStack> .WordStack => _ </wordStack>
+//          <wordStack> .WordStack => _ </wordStack>
+          <wordStack> WS => _ </wordStack>
           <localMem> .Map => ( .Map[ RET_ADDR := #asByteStackInWidth(X +Int Y, 32) ] _:Map ) </localMem>
           <pc> 0 => _ </pc>
           <gas> 100000 => _ </gas>
@@ -91,5 +92,6 @@ module ADD-SPEC
     andBool Y >=Int 0
     andBool 0 <=Int CALL_DEPTH
     andBool CALL_DEPTH <Int 1024
+    andBool #sizeWordStack(WS) <Int 1013
 endmodule
 
