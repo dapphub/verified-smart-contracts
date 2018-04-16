@@ -44,8 +44,8 @@ module EXP-NAIVE-CIRC-SPEC
           <callData> _ </callData>
 
           <callValue> 0 </callValue>
-//          <wordStack> C : B : A : WS => C *Int A ^Int B : 0 : A : WSS </wordStack>
-          <wordStack> WS => _ </wordStack>
+          <wordStack> C : B : A : WS => C *Int A ^Int B : 0 : A : WSS </wordStack>
+//          <wordStack> WS => _ </wordStack>
           <localMem> .Map </localMem>
           <pc> 136 => 167 </pc>
           <gas> 31000000 => _ </gas>
@@ -96,9 +96,9 @@ module EXP-NAIVE-CIRC-SPEC
         <messages> _ </messages>
       </network>
     </ethereum>
-    requires A <=Int 100
-    andBool B <=Int 10
-    andBool C <=Int 100
+    requires A <=Int 5
+    andBool B <=Int 5
+    andBool C <=Int A ^Int B
     andBool A >=Int 0
     andBool B >=Int 0
     andBool C >=Int 0
