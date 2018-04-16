@@ -44,7 +44,7 @@ module EXP-NAIVE-CIRC-SPEC
           <callData> _ </callData>
 
           <callValue> 0 </callValue>
-          <wordStack> C : B : A : WS => C *Int A ^Int B : 0 : A : WSS </wordStack>
+          <wordStack> C : B : A : WS => C *Int A ^Int B : 0 : A : WS </wordStack>
 //          <wordStack> WS => _ </wordStack>
           <localMem> .Map </localMem>
           <pc> 136 => 167 </pc>
