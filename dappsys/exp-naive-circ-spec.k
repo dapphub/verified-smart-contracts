@@ -17,8 +17,8 @@ module EXP-NAIVE-CIRC-SPEC
   //hypothesis: [c, b, a]
   
     rule
-    <k> #execute => (RETURN RET_ADDR:Int 32 ~> _) </k>
-    <exit-code> 1 </exit-code>
+    <k> #execute => _ </k>
+    <exit-code> _ </exit-code>
     <mode> NORMAL </mode>
     <schedule> BYZANTIUM </schedule>
     <analysis> .Map </analysis> // not part of evm
@@ -44,11 +44,11 @@ module EXP-NAIVE-CIRC-SPEC
           <callData> _ </callData>
 
           <callValue> 0 </callValue>
-          <wordStack> C : B : A : WS => C *Int A ^Int B : 0 : A : WS </wordStack>
+          <wordStack> C : B : A : WS => C *Int (A ^Int B) : 0 : A : WS </wordStack>
 //          <wordStack> WS => _ </wordStack>
           <localMem> .Map </localMem>
           <pc> 136 => 167 </pc>
-          <gas> 31000000 => _ </gas>
+          <gas> G => _ </gas>
           <previousGas> _ => _ </previousGas>
 
           <static> false </static> // NOTE: non-static call
@@ -96,15 +96,16 @@ module EXP-NAIVE-CIRC-SPEC
         <messages> _ </messages>
       </network>
     </ethereum>
-    requires A <=Int 5
-    andBool B <=Int 5
+    requires A ==Int 5
+    andBool B ==Int 5
     andBool C <=Int A ^Int B
-    andBool A >=Int 0
-    andBool B >=Int 0
+//    andBool A >=Int 0
+    andBool G >=Int 1000000000
     andBool C >=Int 0
     andBool 0 <=Int CALL_DEPTH
     andBool CALL_DEPTH <Int 100
     andBool #sizeWordStack(WS) <Int 10
+    andBool #sizeWordStack(WS) >=Int 0
 
 endmodule
 
