@@ -35,7 +35,7 @@ module CIRC-NAIVE-SPEC
           <callData> _ </callData>
 
           <callValue> 0 </callValue>
-          <wordStack> C : B : A : 107 : WS => C *Int (A ^Int B) : 0 : A : 107 : WS </wordStack>
+          <wordStack> C : B : A : WS => C *Int (A ^Int B) : 0 : A : WS </wordStack>
           <localMem> _ </localMem>
           <pc> 136 => 167 </pc>
           <gas> G => _ </gas>
@@ -106,12 +106,11 @@ andBool 0 <=Int A
 andBool A <Int pow256
 andBool 0 <=Int B
 andBool B <Int pow256
-andBool 1 <=Int C
+andBool 0 <=Int C
 andBool C <Int pow256
 andBool 0 <=Int (C *Int (A ^Int B))
 andBool (C *Int (A ^Int B)) <Int pow256
-andBool G >=Int 100000000
-andBool A *Int C <Int pow256
+andBool G >=Int (100000000 *Int B) +Int 1000000000
 
 
 
