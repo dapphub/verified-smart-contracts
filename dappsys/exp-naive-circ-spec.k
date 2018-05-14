@@ -31,12 +31,11 @@ module EXP-NAIVE-CIRC-SPEC
           <callData> _ </callData>
 
           <callValue> 0 </callValue>
-          <wordStack> C : B : A : .WordStack => C *Int A ^Int B : 0 : A : .WordStack </wordStack>
-//          <wordStack> WS => _ </wordStack>
+          <wordStack> C : B : A : WS => C *Int A ^Int B : 0 : A : WS </wordStack>
           <localMem> .Map </localMem>
           <pc> 136 => 167 </pc>
           <gas> G => _ </gas>
-  	  <memoryUsed> 0 => _ </memoryUsed>	
+  	  <memoryUsed> MU => _ </memoryUsed>	
           <previousGas> _ => _ </previousGas>
 
           <static> false </static> // NOTE: non-static call
@@ -86,13 +85,17 @@ module EXP-NAIVE-CIRC-SPEC
         <messages> _ </messages>
       </network>
     </ethereum>
-    requires 0 <=Int A andBool A <Int pow256
-    andBool 0 <=Int B andBool B <Int pow256
-    andBool A ^Int B <Int pow256
-    andBool 0 <=Int C andBool C <Int pow256
-    andBool G >=Int 10000000
-    andBool 0 <=Int CALL_DEPTH
-    andBool CALL_DEPTH <Int 100
+    requires MU <Int 100
+    andBool #sizeWordStack(WS) <Int 100
+    andBool 0 <=Int A
+    andBool A <Int pow256
+    andBool 0 <=Int B
+    andBool B <Int pow256
+    andBool 0 <=Int C
+    andBool C <Int pow256
+    andBool (C *Int (A ^Int B)) <Int pow256
+    andBool G >=Int (100000000 *Int B) +Int 1000000000
+
 
 endmodule
 
