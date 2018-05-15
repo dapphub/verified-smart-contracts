@@ -35,7 +35,7 @@ module EXP-CIRC-SPEC
           <localMem> .Map </localMem>
           <pc> 197 => 274 </pc>
           <gas> G => _ </gas>
-  	  <memoryUsed> MU => _ </memoryUsed>	
+  	  <memoryUsed> 0 => _ </memoryUsed>	
           <previousGas> _ => _ </previousGas>
 
           <static> false </static> // NOTE: non-static call
@@ -85,8 +85,7 @@ module EXP-CIRC-SPEC
         <messages> _ </messages>
       </network>
     </ethereum>
-    requires MU <Int 100
-    andBool #sizeWordStack(WS) <Int 100
+    requires #sizeWordStack(WS) <Int 100
     andBool 0 <=Int A
     andBool A <Int pow256
     andBool 0 <=Int B
@@ -94,7 +93,8 @@ module EXP-CIRC-SPEC
     andBool 0 <=Int C
     andBool C <Int pow256
     andBool C *Int A ^Int (2 *Int B) <Int pow256
-    andBool G >=Int (100000000 *Int C) +Int (100000000 *Int A) +Int 1000000000
+    andBool A *Int A <Int pow256 //implied by the previous condition if B > 0.
+    andBool G >=Int (100000000 *Int B) +Int 1000000000
 
 
 endmodule

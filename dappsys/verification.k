@@ -22,6 +22,8 @@ module VERIFICATION
     rule A *Int C /Int C => A                                // 5
 
     rule C *Int (A ^Int B) <Int pow256 => A *Int C <Int pow256//6
+      requires B >Int 0
+      andBool A >=Int 0
 
     rule 0 <=Int (A *Int C) *Int (A ^Int (B -Int 1)) => true // 7
       requires 0 <=Int (C *Int (A ^Int B))
@@ -44,11 +46,20 @@ module VERIFICATION
     rule C *Int A ^Int (2 *Int B) <Int pow256 =>
     	 A *Int A <Int pow256
 	 requires B >Int 0
-	 andBool C >Int 0
+	 andBool C >=Int 0
 
+    rule B ==K 0 ==K false => B >Int 0
+    	 requires 0 >=Int B
 
     rule C *Int A ^Int (2 *Int B) <Int pow256 =>
     	 C *Int (A *Int A) <Int pow256
-	 requires B >Int 0
+         requires B >Int 0
+ 	 andBool C >=Int 0
+
+    rule bool2Word( FORM:Bool ) ==Int 0 => notBool FORM
+
+    rule chop ( A *Int A ) => A *Int A
+    	 requires A *Int A <Int pow256
+    	 
 	 
 endmodule
