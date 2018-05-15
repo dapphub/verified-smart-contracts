@@ -93,8 +93,8 @@ module EXP-CIRC-SPEC
     andBool B <Int pow256
     andBool 0 <=Int C
     andBool C <Int pow256
-    andBool (C *Int (A ^Int B)) <Int pow256
-    andBool G >=Int (100000000 *Int B) +Int 1000000000
+    andBool C *Int A ^Int (2 *Int B) <Int pow256
+    andBool G >=Int (100000000 *Int C) +Int (100000000 *Int A) +Int 1000000000
 
 
 endmodule
