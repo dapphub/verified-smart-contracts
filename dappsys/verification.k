@@ -37,29 +37,53 @@ module VERIFICATION
     rule C *Int (A *Int A) *Int (A *Int A) ^Int (2 *Int (B /Int 2)) =>
     	 C *Int A ^Int (2 *Int B)
 	 requires B %Int 2 =/=Int 0
-	 andBool B >Int 0
+//	 andBool B >Int 0
+
+    rule C *Int 0 ^Int (2 *Int (B /Int 2)) =>
+    	 C *Int 0 ^Int (2 *Int B)
+//	 requires B %Int 2 ==Int 0
 
     rule C *Int (A *Int A) ^Int (2 *Int (B /Int 2)) =>
     	 C *Int A ^Int (2 *Int B)
-	 requires B%Int 2 ==Int 0
+	 requires B %Int 2 ==Int 0
 
-    rule C *Int A ^Int (2 *Int B) <Int pow256 =>
-    	 A *Int A <Int pow256
-	 requires B >Int 0
-	 andBool C >=Int 0
+    rule 0 *Int 0 ^Int (2 *Int (B /Int 2)) =>
+    	 0 *Int 0 ^Int (2 *Int B)
+	 requires B %Int 2 =/=Int 0
 
-    rule B ==K 0 ==K false => B >Int 0
-    	 requires 0 >=Int B
+//    rule A <=Int pow256
+//    	 => A *Int A <=Int pow256
 
-    rule C *Int A ^Int (2 *Int B) <Int pow256 =>
-    	 C *Int (A *Int A) <Int pow256
-         requires B >Int 0
- 	 andBool C >=Int 0
+//    rule 0 <=Int B => 0 <=Int B /Int 2
+
+    rule C *Int (A *Int A) ^Int (2 *Int (B /Int 2)) =>
+    	 C *Int A ^Int (2 *Int B)
+	 requires B %Int 2 ==Int 0
+
+    rule A *Int A <Int pow256 => true
+    	 requires C *Int A ^Int (2 *Int B) <Int pow256
+//     	 requires 0 <=Int B
+//     	 andBool notBool B ==K
+//     	 andBool 1 <=Int C
+
+    rule chop ( A *Int A ) => A *Int A
+    requires C *Int A ^Int (2 *Int B) <Int pow256
 
     rule bool2Word( FORM:Bool ) ==Int 0 => notBool FORM
 
-    rule chop ( A *Int A ) => A *Int A
-    	 requires A *Int A <Int pow256
-    	 
+    // rule chop ( A *Int A ) => A *Int A
+    // 	 requires C *Int A ^Int (2 *Int B) <Int pow256
+    // 	 andBool 1 <=Int C
+    // 	 andBool 0 <=Int B
+    // 	 andBool notBool B ==K 0
+
+    rule C *Int A ^Int ( 2 *Int B ) <Int pow256 =>
+    	 C *Int (A *Int A) ^Int (B /Int 2) <Int pow256
+	 requires B modInt 2 ==Int 0
+
+    rule C *Int A ^Int ( 2 *Int B ) <Int pow256 =>
+    	 C *Int (A *Int A) *Int (A *Int A) ^Int (B /Int 2) <Int pow256
+	 requires notBool (B modInt 2 ==Int 0)
+
 	 
 endmodule

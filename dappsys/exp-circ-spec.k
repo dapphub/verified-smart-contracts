@@ -31,11 +31,11 @@ module EXP-CIRC-SPEC
           <callData> _ </callData>
 
           <callValue> 0 </callValue>
-          <wordStack> C : B : A : WS => C *Int A ^Int (2 *Int B) : 0 : _ : WS </wordStack>
+          <wordStack> C:Int : B:Int : A:Int : WS:WordStack => C *Int A ^Int (2 *Int B) : 0 : _ : WS </wordStack>
           <localMem> .Map </localMem>
           <pc> 197 => 274 </pc>
           <gas> G => _ </gas>
-  	  <memoryUsed> 0 => _ </memoryUsed>	
+  	  <memoryUsed> 0 </memoryUsed>	
           <previousGas> _ => _ </previousGas>
 
           <static> false </static> // NOTE: non-static call
@@ -93,7 +93,6 @@ module EXP-CIRC-SPEC
     andBool 0 <=Int C
     andBool C <Int pow256
     andBool C *Int A ^Int (2 *Int B) <Int pow256
-    andBool A *Int A <Int pow256 //implied by the previous condition if B > 0.
     andBool G >=Int (100000000 *Int B) +Int 1000000000
 
 
