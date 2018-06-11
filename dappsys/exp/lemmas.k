@@ -49,6 +49,9 @@ rule 0 <=Int (N /Int 2) => true
 rule N /Int 2 <Int pow256 => true
   requires N <Int pow256
 
+rule (X *Int X) ^Int (N /Int 2) => X ^Int N
+  requires N modInt 2 ==Int 0
+
 rule Z *Int (X *Int X) ^Int (N /Int 2) => Z *Int X ^Int N
   requires N modInt 2 ==Int 0
 
