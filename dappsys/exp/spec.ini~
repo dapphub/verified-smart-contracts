@@ -1,0 +1,23 @@
+[loop]
+k: #execute => #execute
+output: _
+memoryUsed: 0
+callData: _
+wordStack: C : B : A : WS => C *Int (A ^Int B) : 0 : _ : WS
+pc: 220 => 274
+gas: G => _
+log: _
+refund: _
+storage: _
+statuscode: _
+requires:
+    andBool #sizeWordStack(WS) <Int 10
+    andBool #sizeWordStack(WS) >Int 2
+    andBool 0 <=Int A andBool A <Int pow256
+    andBool 1 <=Int B andBool B <Int pow256
+    andBool 0 <=Int C andBool C <Int pow256
+    andBool 0 <=Int C *Int A ^Int B
+    andBool C *Int A ^Int B <Int pow256
+    andBool G >=Int (100000000 *Int N) +Int 1000000000
+ensures:
+attribute:
